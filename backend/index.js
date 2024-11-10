@@ -4,7 +4,10 @@ import { Server } from "socket.io";
 import cors from "cors";
 
 const corsConfig = {
-  origin: "http://localhost:5173",
+  origin:
+    app.settings.env === "development"
+      ? "http://localhost:5173"
+      : "https://whiteboard-signoz.netlify.app/",
 };
 
 const app = express();
