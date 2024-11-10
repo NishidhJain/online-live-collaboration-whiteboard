@@ -1,7 +1,16 @@
+import Toolbar from "./components/Toolbar";
+import WhiteBoard from "./components/WhiteBoard";
+
+import { useToolbarReducer } from "./hooks/useToolbarReducer";
+
 export default function App() {
+  const toolBarReducer = useToolbarReducer();
+
   return (
-    <h1 className="text-3xl font-bold underline text-green-500">
-      Hello world!
-    </h1>
+    <>
+      <Toolbar toolBarReducer={toolBarReducer} />
+
+      <WhiteBoard toolBarReducer={toolBarReducer} />
+    </>
   );
 }
