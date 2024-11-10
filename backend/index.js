@@ -9,7 +9,7 @@ const corsConfig = {
   origin:
     app.settings.env === "development"
       ? "http://localhost:5173"
-      : "https://whiteboard-signoz.netlify.app/",
+      : "https://whiteboard-signoz.netlify.app",
 };
 
 app.use(cors(corsConfig));
