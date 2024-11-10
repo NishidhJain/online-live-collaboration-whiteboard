@@ -3,6 +3,8 @@ import { createServer } from "http";
 import { Server } from "socket.io";
 import cors from "cors";
 
+const app = express();
+
 const corsConfig = {
   origin:
     app.settings.env === "development"
@@ -10,7 +12,6 @@ const corsConfig = {
       : "https://whiteboard-signoz.netlify.app/",
 };
 
-const app = express();
 app.use(cors(corsConfig));
 
 const httpServer = createServer(app);
